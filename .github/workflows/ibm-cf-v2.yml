@@ -62,7 +62,7 @@ jobs:
         mv xray ${IBM_CF_APP_NAME}
 
     - name: Generate XRay Config File (VMess)
-      if: ${{ env.XR_WS_PATH_VMESS }}
+#      if: ${{ env.XR_WS_PATH_VMESS }}
       run: |
         base64 << P3TERX > config
         {
@@ -123,10 +123,13 @@ jobs:
                 ]
               },
               "streamSettings": {
-                "network":"ws",
-                "allowInsecure": false,
-                "wsSettings": {
-                  "path": "${XR_WS_PATH_VLESS}"
+                "network":"tcp",
+                "security": "xtls",
+                "tcpSettings": {
+                 "type": "none"
+                },
+                "xtlsSettings": {
+                   "allowInsecure": false
                 }
               }
             }
