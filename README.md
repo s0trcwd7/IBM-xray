@@ -38,9 +38,9 @@ Use GitHub Actions to automatically deploy the latest version of V2Ray to IBM Cl
 
 ## 重要信息
 
-fork或clone本项目请低调使用，执意要在youtube和bilibili上宣传或者不同意这条的请自觉关闭本页面离开！！！
+fork或clone本项目请低调使用，执意要在youtube和bilibili上宣传或者不同意低调使用的请自觉关闭本页面离开！！！
 
-Fork or clone this project, please use it low-key. If you insist on advertising on youtube and bilibili, or if you don’t agree with this, please consciously close this page and leave! ! !
+Fork or clone this project, please use it in a low-key manner. If you insist on advertising on youtube and bilibili or do not agree with it, please consciously close this page and leave! ! !
 
 禁止在youtube和bilibili上宣传,后果很严重！！！
 
