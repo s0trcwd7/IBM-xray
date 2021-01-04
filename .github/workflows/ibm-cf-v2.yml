@@ -99,7 +99,7 @@ jobs:
         P3TERX
 
     - name: Generate XRay Config File (VLESS)
-#      if: ${{ env.XR_WS_PATH_VLESS }}
+      if: ${{ env.XR_WS_PATH_VLESS }}
       run: |
         base64 << P3TERX > config
         {
@@ -123,13 +123,10 @@ jobs:
                 ]
               },
               "streamSettings": {
-                "network":"tcp",
-                "security": "xtls",
-                "tcpSettings": {
-                 "type": "none"
-                },
-                "xtlsSettings": {
-                   "allowInsecure": false
+                "network":"ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "${XR_WS_PATH_VLESS}"
                 }
               }
             }
