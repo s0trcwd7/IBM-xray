@@ -16,8 +16,8 @@ Use GitHub Actions to automatically deploy the latest version of V2Ray to IBM Cl
   | `IBM_CF_ORG_NAME`(optional) | Organization name, the default is the email address. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_SPACE_NAME`(optional) | Space name, default is `dev`. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_APP_NAME` | App name, fill in according to your preference. |
-  | `V2_UUID` | Generate using UUID generator |
-  | `V2_WS_PATH_VMESS` </br> `V2_WS_PATH_VLESS` | Select one of the VMess and VLESS protocols, and fill in a combination of numbers and English letters. |
+  | `XR_UUID` | Generate using UUID generator |
+  | `XR_WS_PATH_VMESS` </br> `XR_WS_PATH_VLESS` | Select one of the VMess and VLESS protocols, and fill in a combination of numbers and English letters. |
 
 - Click the `Run workflow` button on the Actions page.
 - Wait for the deployment to complete.
@@ -38,17 +38,23 @@ Use GitHub Actions to automatically deploy the latest version of V2Ray to IBM Cl
 
 ## 重要信息
 
-请不要fork或clone本项目，本项目为个人自用！！！
+fork或clone本项目请低调使用，执意要在youtube和bilibili上宣传或者不同意这条的请自觉关闭本页面离开！！！
 
-Please do not fork or clone this project, this project is for personal use！！！
+Fork or clone this project, please use it low-key. If you insist on advertising on youtube and bilibili, or if you don’t agree with this, please consciously close this page and leave! ! !
 
-更不要在youtube上宣传！！！
+禁止在youtube和bilibili上宣传,后果很严重！！！
 
-Don’t promote it on youtube！！！
+It is forbidden to promote on youtube and bilibili, the consequences are serious! ! !
 
-出现任何问题，后果自负！！！
+因在youtube和bilibili上宣传出现任何问题，后果自负！！！
 
 If there is any problem, you will be responsible for the consequences！！！
+
+fork之后请自觉注明P3TERX/IBM-CF-V2链接！！！
+
+Please consciously indicate the P3TERX/IBM-CF-V2 link after fork！！！
+
+- [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
 
 感谢P3TERX提供原项目
 
