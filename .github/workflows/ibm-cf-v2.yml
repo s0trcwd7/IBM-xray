@@ -132,7 +132,7 @@ jobs:
               "port": 1234,
               "protocol": "shadowsocks",
               "settings": {
-                "method": "chacha20-ietf-poly1305",
+                "method": "chacha20-ietf",
                 "password": "${V2_UUID}"
               },
               "streamSettings": {
