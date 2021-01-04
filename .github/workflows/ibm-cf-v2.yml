@@ -155,7 +155,7 @@ jobs:
                         "password": "${SS_PASS}"
                 },
                     "streamSettings": {
-                        "network": "tcp,udp"
+                        "network": "udp"
                     }
                 }
             ],
