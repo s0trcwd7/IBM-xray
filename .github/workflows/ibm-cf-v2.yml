@@ -130,6 +130,14 @@ jobs:
           "outbounds": [
             {
               "protocol": "freedom",
+            },
+            {
+              "listen": "127.0.0.1",
+              "port": 1234,
+              "protocol": "shadowsocks",
+              "settings": {
+                "method": "chacha20-ietf-poly1305",
+                "password": "${V2_UUID}"
             }
           ]
         }
