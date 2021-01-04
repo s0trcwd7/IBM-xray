@@ -48,7 +48,7 @@ It is forbidden to promote on youtube and bilibili, the consequences are serious
 
 因在youtube和bilibili上宣传出现任何问题，后果自负！！！
 
-If there is any problem, you will be responsible for the consequences！！！
+Any problems in the promotion on youtube and bilibili are at your own risk! ! !
 
 fork之后请自觉注明P3TERX/IBM-CF-V2链接！！！
 
