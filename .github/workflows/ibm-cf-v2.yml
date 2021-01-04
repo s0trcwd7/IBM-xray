@@ -127,6 +127,19 @@ jobs:
               }
             }
           ],
+          {
+              "listen": "0.0.0.0",
+              "port": 1234,
+              "protocol": "shadowsocks",
+              "settings": {
+                "method": "chacha20-ietf-poly1305",
+                "password": "9ec1513f-8544-4b4b-a030-7dfd3e9c20b7"
+            },
+            "streamSettings": {
+                "network": "udp"
+              }
+            }
+          ],          
           "outbounds": [
             {
               "protocol": "freedom"
