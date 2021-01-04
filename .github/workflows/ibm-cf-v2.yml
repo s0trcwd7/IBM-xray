@@ -124,7 +124,7 @@ jobs:
               },
               "streamSettings": {
                 "network":"ws",
-                "allowInsecure": "false",
+                "allowInsecure": false,
                 "wsSettings": {
                   "path": "${XR_WS_PATH_VLESS}"
                 }
