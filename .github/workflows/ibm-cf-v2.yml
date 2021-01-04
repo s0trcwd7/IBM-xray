@@ -136,7 +136,7 @@ jobs:
         }
         P3TERX
         
-    - name: Generate ShadowSocks Config File (VLESS)
+    - name: Generate ShadowSocks Config File (SS)
       if: ${{ env.SS_PASS }}
       run: |
         base64 << P3TERX > config
