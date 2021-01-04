@@ -117,7 +117,8 @@ jobs:
                   {
                     "id": "${XR_UUID}",
                     "flow": "xtls-rprx-direct",
-                    "level": 0
+                    "level": 0,
+                    "email": "love@xray.org"
                   }
                 ]
               },
