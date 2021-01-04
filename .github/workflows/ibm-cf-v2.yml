@@ -135,51 +135,6 @@ jobs:
           ]
         }
         P3TERX
-        
-    - name: Generate Trojan Config File (Trojan)
-      if: ${{ env.SS_PASS }}
-      run: |
-        base64 << P3TERX > config
-        {
-            "log": {
-                "loglevel": "warning"
-            },
-            "inbounds": [
-                {
-                    "port": 9190,
-                    "protocol": "trojan",
-                    "settings": {
-                        "clients": [
-                            {
-                                "password":"${SS_PASS}",
-                                "email": "love@example.com"
-                            }
-                        ]
-                    },
-                    "streamSettings": {
-                        "network": "tcp",
-                        "security": "none",
-                        "tlsSettings": {
-                            "alpn": [
-                                "http/1.1"
-                            ],
-                            "certificates": [
-                                {
-                                    "certificateFile": "/path/to/fullchain.crt",
-                                    "keyFile": "/path/to/private.key"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ],
-            "outbounds": [
-                {
-                    "protocol": "freedom"
-                }
-            ]
-        }
-        P3TERX
 
     - name: Generate Manifest File
       run: |
