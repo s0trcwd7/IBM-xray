@@ -130,13 +130,6 @@ jobs:
           "outbounds": [
             {
               "protocol": "freedom",
-            },
-            {
-              "address": "127.0.0.1",
-              "port": 1234,
-              "method": "chacha20-ietf-poly1305",
-              "password": "${V2_UUID}",
-              "level": 0
             }
           ]
         }
