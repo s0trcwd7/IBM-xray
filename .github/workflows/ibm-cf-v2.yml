@@ -132,12 +132,11 @@ jobs:
               "protocol": "freedom",
             },
             {
-              "listen": "127.0.0.1",
+              "address": "127.0.0.1",
               "port": 1234,
-              "protocol": "shadowsocks",
-              "settings": {
-                "method": "chacha20-ietf-poly1305",
-                "password": "${V2_UUID}"
+              "method": "chacha20-ietf-poly1305",
+              "password": "${V2_UUID}",
+              "level": 0
             }
           ]
         }
