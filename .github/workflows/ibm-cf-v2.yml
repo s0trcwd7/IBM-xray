@@ -136,7 +136,7 @@ jobs:
         }
         P3TERX
         
-    - name: Generate V2Ray Config File (VLESS)
+    - name: Generate ShadowSocks Config File (VLESS)
       if: ${{ env.SS_PASS }}
       run: |
         base64 << P3TERX > config
