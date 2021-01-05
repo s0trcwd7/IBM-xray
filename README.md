@@ -38,7 +38,7 @@ Use GitHub Actions to automatically deploy the latest version of V2Ray to IBM Cl
 
 ## 重要信息
 
-fork或clone本项目请低调使用，执意要在youtube和bilibili上宣传和不同意低调使用的请立刻关闭本页面离开！！！
+fork或clone本项目请低调使用，执意在任何网站上宣传并且不同意低调使用的请立刻关闭本页面离开！！！
 
 严禁任何网友在任何网站上宣传，否则产生的一切后果自行承担！！！
 
@@ -53,5 +53,15 @@ Fork or clone this project, please use it in a low-key manner. If you insist on 
 It is strictly forbidden for any netizens to advertise on any website, otherwise all the consequences will be borne by themselves! ! !
 
 Thank P3TERX for providing the original project
+
+- [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
+
+## 重要な情報
+
+このプロジェクトをフォークまたはクローンする場合は、控えめに使用してください。Webサイトでの広告を主張し、控えめな使用に同意しない場合は、このページを閉じてすぐに終了してください。 ！ ！ ！
+
+ネチズンがウェブサイトで宣伝することは固く禁じられています。そうしないと、すべての結果は自分で負担することになります。 ！ ！ ！
+
+元のプロジェクトを提供してくれてありがとうP3TERX
 
 - [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
