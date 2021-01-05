@@ -42,19 +42,9 @@ fork或clone本项目请低调使用，执意要在youtube和bilibili上宣传�
 
 Fork or clone this project, please use it in a low-key manner. If you insist on advertising on youtube and bilibili and do not agree with it, please close this page and leave immediately! ! !
 
-禁止在youtube和bilibili上宣传，后果很严重！！！
+严禁任何网友在任何网站上宣传，否则产生的一切后果自行承担！！！
 
-It is forbidden to promote on youtube and bilibili, the consequences are serious! ! !
-
-因在youtube和bilibili上宣传出现任何问题，后果自负！！！
-
-Any problems in the promotion on youtube and bilibili are at your own risk! ! !
-
-fork之后请自觉注明P3TERX/IBM-CF-V2链接！！！
-
-Please consciously indicate the P3TERX/IBM-CF-V2 link after fork！！！
-
-- [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
+It is strictly forbidden for any netizens to advertise on any website, otherwise all the consequences will be borne by themselves! ! !
 
 感谢P3TERX提供原项目
 
