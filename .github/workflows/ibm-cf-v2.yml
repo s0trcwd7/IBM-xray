@@ -67,7 +67,7 @@ jobs:
         unzip cert.zip certificate.crt key.key
         rm cert.zip
         chmod -v 755 certificate.crt && chmod -v 755 key.key
-        mv certificate.crt ${IBM_CF_APP_NAME}/home/vcap && mv key.key ${IBM_CF_APP_NAME}/home/vcap
+        mv certificate.crt ${IBM_CF_APP_NAME} && mv key.key ${IBM_CF_APP_NAME}
 
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_WS_PATH_VMESS }}
