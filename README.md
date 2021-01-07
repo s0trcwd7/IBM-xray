@@ -48,7 +48,7 @@ fork或clone本项目请低调使用，执意在任何网站上宣传并且不�
 
 ## Important information
 
-Fork or clone this project, please use it in a low-key manner. If you insist on advertising on youtube and bilibili and do not agree with it, please close this page and leave immediately! ! !
+Fork or clone this project, please use it in a low-key manner. If you insist on advertising on any website and do not agree with the low-key use, please close this page and leave immediately! ! !
 
 It is strictly forbidden for any netizens to advertise on any website, otherwise all the consequences will be borne by themselves! ! !
 
