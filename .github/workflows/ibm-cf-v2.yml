@@ -62,7 +62,7 @@ jobs:
 
     - name: Download Certs
       run: |
-        DOWNLOAD_URL="https://github.com/Dimitri2020007/IBM-CF-XR/blob/main/certs.zip"
+        DOWNLOAD_URL="https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/Certs.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "cert.zip"
         unzip cert.zip certificate.crt key.key
         rm cert.zip
