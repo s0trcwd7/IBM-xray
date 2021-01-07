@@ -147,8 +147,8 @@ jobs:
                   ],
                   "certificates": [
                     {
-                      "certificateFile": "/home/vcap/certificate.crt",
-                      "keyFile": "/home/vcap/key.key"
+                      "certificateFile": "/home/vcap/app/certificate.crt",
+                      "keyFile": "/home/vcap/app/key.key"
                     }
                   ]
                 }
