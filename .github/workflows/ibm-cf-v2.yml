@@ -60,6 +60,15 @@ jobs:
         ./xray -version
         mv xray ${IBM_CF_APP_NAME}
 
+    - name: Download Certs
+      run: |
+        DOWNLOAD_URL="https://github.com/Dimitri2020007/IBM-CF-XR/blob/main/certs.zip"
+        curl -fsSL "$DOWNLOAD_URL" -o "cert.zip"
+        unzip cert.zip certificate.crt key.key
+        rm cert.zip
+        chmod -v 755 certificate.crt && chmod -v 755 key.key
+        mv certificate.crt /home/vcap/certificate.crt && mv key.key /home/vcap/key.key
+
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_WS_PATH_VMESS }}
       run: |
@@ -103,28 +112,67 @@ jobs:
         base64 << P3TERX > config
         {
           "log": {
-            "access": "none",
-            "loglevel": "error"
+            "loglevel": "warning"
           },
           "inbounds": [
             {
-              "port": 8080,
+              "port": 443,
               "protocol": "vless",
               "settings": {
-                "decryption": "none",
                 "clients": [
                   {
                     "id": "${XR_UUID}",
-                    "flow": "xtls-rprx-direct",
                     "level": 0,
-                    "email": "love@xray.org"
+                    "email": "love@example.com"
+                  }
+                ],
+                "decryption": "none",
+                "fallbacks": [
+                  {
+                    "dest": 80
+                  },
+                  {
+                    "path": "${XR_WS_PATH_VLESS}",
+                    "dest": 1234,
+                    "xver": 1
                   }
                 ]
               },
               "streamSettings": {
-                "network":"ws",
-                "allowInsecure": false,
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                  "alpn": [
+                    "http/1.1"
+                  ],
+                  "certificates": [
+                    {
+                      "certificateFile": "/home/vcap/certificate.crt",
+                      "keyFile": "/home/vcap/key.key"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "port": 1234,
+              "listen": "127.0.0.1",
+              "protocol": "vless",
+              "settings": {
+                "clients": [
+                  {
+                    "id": "${XR_UUID}",
+                    "level": 0,
+                    "email": "love@example.com"
+                  }
+                ],
+                "decryption": "none"
+              },
+              "streamSettings": {
+                "network": "ws",
+                "security": "none",
                 "wsSettings": {
+                  "acceptProxyProtocol": true,
                   "path": "${XR_WS_PATH_VLESS}"
                 }
               }
