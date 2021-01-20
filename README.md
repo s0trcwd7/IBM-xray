@@ -32,6 +32,20 @@ Use GitHub Actions to automatically deploy the latest version of V2Ray to IBM Cl
 - [IBM Cloud](https://cloud.ibm.com/)
 - [GitHub Actions](https://github.com/features/actions)
 
+## Cloudflare Workers Acceleration Code
+
+addEventListener(
+    "fetch",event => {
+        let url=new URL(event.request.url);
+        url.hostname="(IBM_CF_APP_NAME).us-south.cf.appdomain.cloud";
+        url.pathname="(XR_WS_PATH_VMESS) or (XR_WS_PATH_VLESS)";
+        let request=new Request(url,event.request);
+        event. respondWith(
+            fetch(request)
+        )
+    }
+)
+
 ## Licence
 
 [MIT](https://github.com/P3TERX/IBM-CF-V2/blob/main/LICENSE) © P3TERX
