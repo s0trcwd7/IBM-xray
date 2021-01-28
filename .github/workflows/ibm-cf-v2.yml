@@ -65,14 +65,12 @@ jobs:
       run: |
         DOWNLOAD_URL="https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/config_vmess.json"
         curl -fsSL "$DOWNLOAD_URL" -o "vmess.json"
-        base64 vmess.json
 
     - name: Generate XRay Config File (VLESS)
       if: ${{ env.XR_WS_PATH_VLESS }}
       run: |
         DOWNLOAD_URL="https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/config_vless.json"
         curl -fsSL "$DOWNLOAD_URL" -o "vless.json"
-        base64 vless.json
 
     - name: Generate Manifest File
       run: |
