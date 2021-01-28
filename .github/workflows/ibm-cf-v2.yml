@@ -56,7 +56,7 @@ jobs:
     - name: Download Latest Trojan-Go
       if: ${{ env.IBM_DL_TR }}
       run: |
-        DOWNLOAD_URL="https://github.com/p4gefau1t/trojan-go/releases/latest/download/trojan-go-linux-amd64.zip"
+        DOWNLOAD_URL="https://github.com/p4gefau1t/trojan-go/releases/download/v0.8.2/trojan-go-linux-amd64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-trojan.zip"
         unzip latest-trojan.zip trojan-go geoip.dat geosite.dat
         rm latest-trojan.zip
