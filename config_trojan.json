@@ -11,14 +11,14 @@
                 "decryption": "none",
                 "clients": [
                   {
-                    "id": "${V2_UUID}"
+                    "id": "${XR_UUID}"
                   }
                 ]
               },
               "streamSettings": {
                 "network":"ws",
                 "wsSettings": {
-                  "path": "${V2_WS_PATH_VLESS}"
+                  "path": "${XR_WS_PATH_VLESS}"
                 }
               }
             }
