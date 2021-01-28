@@ -18,7 +18,7 @@
               "streamSettings": {
                 "network":"ws",
                 "wsSettings": {
-                  "path": "${XR_WS_PATH_VLESS}"
+                  "path": "${XR_WS_PATH_TR}"
                 }
               }
             }
