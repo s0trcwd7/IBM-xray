@@ -10,7 +10,7 @@
               "settings": {
                 "clients": [
                   {
-                    "id": "${V2_UUID}",
+                    "id": "${XR_UUID}",
                     "alterId": 64
                   }
                 ]
@@ -18,7 +18,7 @@
               "streamSettings": {
                 "network":"ws",
                 "wsSettings": {
-                  "path": "${V2_WS_PATH_VMESS}"
+                  "path": "${XR_WS_PATH_VMESS}"
                 }
               }
             }
