@@ -90,6 +90,13 @@ jobs:
         curl -fsSL "$DOWNLOAD_URL" -o "vless.json"
         base64 vless.json > config
 
+    - name: Generate Trojan Config File (Trojan)
+      if: ${{ env.XR_WS_PATH_TR }}
+      run: |
+        DOWNLOAD_URL="https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/config_trojan.json"
+        curl -fsSL "$DOWNLOAD_URL" -o "trojan.json"
+        base64 trojan.json > config
+
     - name: Generate Manifest File
       run: |
         cat << P3TERX > manifest.yml
