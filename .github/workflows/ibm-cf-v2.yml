@@ -45,7 +45,6 @@ jobs:
         cf version
 
     - name: Login to IBM Cloud Foundry
-      if: $
       run: |
         cf login \
           -a "${IBM_CF_API}" \
