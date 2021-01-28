@@ -63,16 +63,76 @@ jobs:
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_WS_PATH_VMESS }}
       run: |
-        DOWNLOAD_URL="https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/config_vmess.json"
-        curl -fsSL "$DOWNLOAD_URL" -o "vmess.json"
-        base64 vmess.json > config
+        base64 << P3TERX > config
+        {
+          "log": {
+            "access": "none",
+            "loglevel": "error"
+          },
+          "inbounds": [
+            {
+              "port": 8080,
+              "protocol": "vmess",
+              "settings": {
+                "clients": [
+                  {
+                    "id": "${XR_UUID}",
+                    "alterId": 64
+                  }
+                ]
+              },
+              "streamSettings": {
+                "network":"ws",
+                "wsSettings": {
+                  "path": "${XR_WS_PATH_VMESS}"
+                }
+              }
+            }
+          ],
+          "outbounds": [
+            {
+              "protocol": "freedom"
+            }
+          ]
+        }
+        P3TERX
 
     - name: Generate XRay Config File (VLESS)
       if: ${{ env.XR_WS_PATH_VLESS }}
       run: |
-        DOWNLOAD_URL="https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/config_vless.json"
-        curl -fsSL "$DOWNLOAD_URL" -o "vless.json"
-        base64 vless.json > config
+        base64 << P3TERX > config
+        {
+          "log": {
+            "access": "none",
+            "loglevel": "error"
+          },
+          "inbounds": [
+            {
+              "port": 8080,
+              "protocol": "vless",
+              "settings": {
+                "decryption": "none",
+                "clients": [
+                  {
+                    "id": "${XR_UUID}"
+                  }
+                ]
+              },
+              "streamSettings": {
+                "network":"ws",
+                "wsSettings": {
+                  "path": "${XR_WS_PATH_VLESS}"
+                }
+              }
+            }
+          ],
+          "outbounds": [
+            {
+              "protocol": "freedom"
+            }
+          ]
+        }
+        P3TERX
 
     - name: Generate Manifest File
       run: |
