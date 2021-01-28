@@ -29,6 +29,8 @@ jobs:
       IBM_CF_ORG_NAME: ${{ secrets.IBM_CF_ORG_NAME }}
       IBM_CF_SPACE_NAME: ${{ secrets.IBM_CF_SPACE_NAME }}
       IBM_CF_APP_NAME: ${{ secrets.IBM_CF_APP_NAME }}
+      IBM_DL_XR: ${{ secrets.IBM_DL_XR }}
+      IBM_DL_TR: ${{ secrets.IBM_DL_TR }}
       XR_UUID: ${{ secrets.XR_UUID }}
       XR_WS_PATH_VMESS: ${{ secrets.XR_WS_PATH_VMESS }}
       XR_WS_PATH_VLESS: ${{ secrets.XR_WS_PATH_VLESS }}
@@ -42,6 +44,7 @@ jobs:
         cf version
 
     - name: Login to IBM Cloud Foundry
+      if: $
       run: |
         cf login \
           -a "${IBM_CF_API}" \
@@ -50,7 +53,19 @@ jobs:
           -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
           -s "${IBM_CF_SPACE_NAME:-dev}"
 
+    - name: Download Latest Trojan-Go
+      if: ${{ env.IBM_DL_TR }}
+      run: |
+        DOWNLOAD_URL="https://github.com/p4gefau1t/trojan-go/releases/latest/download/trojan-go-linux-amd64.zip"
+        curl -fsSL "$DOWNLOAD_URL" -o "latest-trojan.zip"
+        unzip latest-trojan.zip trojan-go geoip.dat geosite.dat
+        rm latest-trojan.zip
+        chmod -v 755 trojan-go
+        ./trojan-go -version
+        mv trojan-go ${IBM_CF_APP_NAME}
+
     - name: Download Latest XRay
+      if: ${{ env.IBM_DL_XR }}
       run: |
         DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-xray.zip"
