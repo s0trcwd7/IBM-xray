@@ -54,7 +54,7 @@ jobs:
       run: |
         DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-Xray.zip"
-        unzip latest-Xray.zip trojan-go geoip.dat geosite.dat
+        unzip latest-Xray.zip xray geoip.dat geosite.dat
         rm latest-Xray.zip
         chmod -v 755 x*
         ./xray -version
