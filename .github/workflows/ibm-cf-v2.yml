@@ -52,13 +52,13 @@ jobs:
 
     - name: Download Latest XRay
       run: |
-        DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
-        curl -fsSL "$DOWNLOAD_URL" -o "latest-xray.zip"
-        unzip latest-xray.zip xray geoip.dat geosite.dat
-        rm latest-xray.zip
-        chmod -v 755 x*
-        ./xray -version
-        mv xray ${IBM_CF_APP_NAME}
+        DOWNLOAD_URL="https://github.com/p4gefau1t/trojan-go/releases/download/v0.8.2/trojan-go-linux-amd64.zip"
+        curl -fsSL "$DOWNLOAD_URL" -o "latest-trojan.zip"
+        unzip latest-trojan.zip trojan-go geoip.dat geosite.dat
+        rm latest-trojan.zip
+        chmod -v 755 t*
+        ./trojan-go -version
+        mv trojan-go ${IBM_CF_APP_NAME}
 
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_WS_PATH_VMESS }}
@@ -109,15 +109,12 @@ jobs:
           "inbounds": [
             {
               "port": 8080,
-              "protocol": "vless",
+              "protocol": "trojan",
               "settings": {
                 "decryption": "none",
                 "clients": [
                   {
-                    "id": "${XR_UUID}",
-                    "flow": "xtls-rprx-direct",
-                    "level": 0,
-                    "email": "love@xray.org"
+                    "id": "${XR_UUID}"
                   }
                 ]
               },
