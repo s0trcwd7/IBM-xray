@@ -60,14 +60,6 @@ jobs:
         ./xray -version
         mv xray ${IBM_CF_APP_NAME}
 
-    - name: Download Caddyconfigfile
-      run: |
-        DOWNLOAD_URL="https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/etc/Caddyfile"
-        curl -fsSL "$DOWNLOAD_URL" -o "caddyfile"
-        mkdir -p /etc/caddy/ /usr/share/caddy && echo -e "User-agent: *\nDisallow: /" >/usr/share/caddy/robots.txt
-        curl -fsSL "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html" -o "/usr/share/caddy/index.html"
-        
-
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_WS_PATH_VMESS }}
       run: |
@@ -154,7 +146,6 @@ jobs:
           memory: ${IBM_CF_APP_MEM}
           random-route: true
           command: base64 -d config > config.json; ./${IBM_CF_APP_NAME} -config=config.json
-          caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
           buildpacks:
           - binary_buildpack
         P3TERX
