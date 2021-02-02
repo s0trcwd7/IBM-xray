@@ -48,7 +48,7 @@ fork或clone本项目请低调使用，执意在任何网站上宣传并且不�
 
 重要的事情说三遍，不要设置Action自动重启。因此设置导致的一切后果本人概不负责！！！
 
-只要还在使用ibm xray-core超过10天是不会自动关闭的
+只要还在使用ibm xray搭建的节点，节点超过10天是不会自动关闭的。
 
 ## Important information
 
@@ -62,7 +62,7 @@ Thank P3TERX for providing the original project
 
 The important thing is said three times, do not set the Action to automatically restart. Therefore, I am not responsible for all consequences caused by the setting! ! !
 
-As long as ibm xray-core is still used for more than 10 days, it will not be automatically closed
+As long as the node built with ibm xray is still used, the node will not be automatically closed for more than 10 days.
 
 ## 重要な情報
 
@@ -76,4 +76,4 @@ As long as ibm xray-core is still used for more than 10 days, it will not be aut
 
 重要なことは3回言われていますが、自動的に再起動するようにアクションを設定しないでください。 したがって、私は設定によって引き起こされるすべての結果に対して責任を負いません！ ！ ！
 
-ibm xray-coreが10日以上使用されている限り、自動的に閉じられることはありません。
+ibm xrayで構築されたノードが引き続き使用されている限り、ノードは10日を超えて自動的に閉じられません。
