@@ -44,11 +44,11 @@ fork或clone本项目请低调使用，执意在任何网站上宣传并且不�
 
 感谢P3TERX提供原项目
 
+- [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
+
 重要的事情说三遍，不要设置Action自动重启。因此设置导致的一切后果本人概不负责！！！
 
 只要还在使用ibm xray-core超过10天是不会自动关闭的
-
-- [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
 
 ## Important information
 
