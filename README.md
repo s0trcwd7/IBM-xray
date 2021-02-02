@@ -46,6 +46,8 @@ fork或clone本项目请低调使用，执意在任何网站上宣传并且不�
 
 重要的事情说三遍，不要设置Action自动重启。因此设置导致的一切后果本人概不负责！！！
 
+只要还在使用ibm xray-core超过10天是不会自动关闭的
+
 - [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
 
 ## Important information
@@ -60,6 +62,8 @@ Thank P3TERX for providing the original project
 
 The important thing is said three times, do not set the Action to automatically restart. Therefore, I am not responsible for all consequences caused by the setting! ! !
 
+As long as ibm xray-core is still used for more than 10 days, it will not be automatically closed
+
 ## 重要な情報
 
 このプロジェクトをフォークまたはクローンする場合は、控えめに使用してください。Webサイトでの広告を主張し、控えめな使用に同意しない場合は、このページを閉じてすぐに終了してください。 ！ ！ ！
@@ -71,3 +75,5 @@ The important thing is said three times, do not set the Action to automatically 
 - [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
 
 重要なことは3回言われていますが、自動的に再起動するようにアクションを設定しないでください。 したがって、私は設定によって引き起こされるすべての結果に対して責任を負いません！ ！ ！
+
+ibm xray-coreが10日以上使用されている限り、自動的に閉じられることはありません。
