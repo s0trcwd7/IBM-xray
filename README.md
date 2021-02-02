@@ -58,6 +58,8 @@ Thank P3TERX for providing the original project
 
 - [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
 
+The important thing is said three times, do not set the Action to automatically restart. Therefore, I am not responsible for all consequences caused by the setting! ! !
+
 ## 重要な情報
 
 このプロジェクトをフォークまたはクローンする場合は、控えめに使用してください。Webサイトでの広告を主張し、控えめな使用に同意しない場合は、このページを閉じてすぐに終了してください。 ！ ！ ！
@@ -67,3 +69,5 @@ Thank P3TERX for providing the original project
 元のプロジェクトを提供してくれてありがとうP3TERX
 
 - [IBM-CF-V2](https://github.com/P3TERX/IBM-CF-V2.git)
+
+重要なことは3回言われていますが、自動的に再起動するようにアクションを設定しないでください。 したがって、私は設定によって引き起こされるすべての結果に対して責任を負いません！ ！ ！
