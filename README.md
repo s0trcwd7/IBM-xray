@@ -50,6 +50,8 @@ fork或clone本项目请低调使用，执意在任何网站上宣传并且不�
 
 只要还在使用ibm xray搭建的节点，节点超过10天是不会自动关闭的。
 
+禁止滥用，因滥用产生的一切后果本人概不负责！！！
+
 ## Important information
 
 Fork or clone this project, please use it in a low-key manner. If you insist on advertising on any website and do not agree with the low-key use, please close this page and leave immediately! ! !
@@ -64,6 +66,8 @@ The important thing is said three times, do not set the Action to automatically 
 
 As long as the node built with ibm xray is still used, the node will not be automatically closed for more than 10 days.
 
+Abuse is prohibited, I am not responsible for any consequences arising from abuse! ! !
+
 ## 重要な情報
 
 このプロジェクトをフォークまたはクローンする場合は、控えめに使用してください。Webサイトでの広告を主張し、控えめな使用に同意しない場合は、このページを閉じてすぐに終了してください。 ！ ！ ！
@@ -77,3 +81,5 @@ As long as the node built with ibm xray is still used, the node will not be auto
 重要なことは3回言われていますが、自動的に再起動するようにアクションを設定しないでください。 したがって、私は設定によって引き起こされるすべての結果に対して責任を負いません！ ！ ！
 
 ibm xrayで構築されたノードが引き続き使用されている限り、ノードは10日を超えて自動的に閉じられません。
+
+虐待は禁止されています、私は虐待から生じるいかなる結果に対しても責任を負いません！ ！ ！
