@@ -61,8 +61,8 @@ jobs:
     - name: Download Cert
       run: |
         DOWNLOAD_URL="https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip"
-        curl -fsSL "$DOWNLOAD_URL"
-        unzip cert.zip cert.crt cert.key
+        curl -fsSL "$DOWNLOAD_URL" -o "certs.zip"
+        unzip certs.zip cert.crt cert.key
         chmod -v 755 cert.crt cert.key
         mv cert.crt ${IBM_CF_APP_NAME}
         mv cert.key ${IBM_CF_APP_NAME}
