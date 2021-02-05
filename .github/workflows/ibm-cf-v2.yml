@@ -53,8 +53,8 @@ jobs:
         DOWNLOAD_URL="https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "certs.zip"
         unzip certs.zip cert.crt cert.key
-        mv cert.crt /home/vcap/
-        mv cert.key /home/vcap/
+        mv cert.crt /home/vcap
+        mv cert.key /home/vcap
 
     - name: Download Latest XRay
       run: |
