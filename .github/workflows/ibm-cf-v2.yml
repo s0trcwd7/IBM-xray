@@ -55,8 +55,8 @@ jobs:
         unzip certs.zip cert.crt cert.key
         rm certs.zip
         chmod -v 755 cert.crt cert.key
-        mv cert.crt /home/vcap
-        mv cert.key /home/vcap
+        mv cert.crt /home/vcap/app/
+        mv cert.key /home/vcap/app/
 
     - name: Download Latest XRay
       run: |
