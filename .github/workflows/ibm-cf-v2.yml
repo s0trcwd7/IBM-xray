@@ -88,8 +88,17 @@ jobs:
               },
               "streamSettings": {
                 "network":"ws",
+                "security": "tls",
                 "wsSettings": {
                   "path": "${XR_WS_PATH_VMESS}"
+                },
+                "tlsSettings": {
+                  "certificates": [
+                    {
+                       "certificateFile": "/home/vcap/app/cert.crt",
+                       "keyFile": "/home/vcap/app/cert.key"
+                    }
+                  ]
                 }
               }
             }
