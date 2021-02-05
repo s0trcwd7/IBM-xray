@@ -54,8 +54,8 @@ jobs:
         curl -fsSL "$DOWNLOAD_URL" -o "certs.zip"
         unzip certs.zip cert.crt cert.key
         chmod -v 755 cert.crt cert.key
-        mv cert.crt /usr/local/
-        mv cert.key /usr/local/
+        mv cert.crt /home/
+        mv cert.key /home/
 
     - name: Download Latest XRay
       run: |
