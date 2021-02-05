@@ -55,8 +55,6 @@ jobs:
         unzip certs.zip cert.crt cert.key
         rm certs.zip
         chmod -v 755 cert.crt cert.key
-        mv cert.crt ${IBM_CF_APP_NAME}
-        mv cert.key ${IBM_CF_APP_NAME}
 
     - name: Download Latest XRay
       run: |
