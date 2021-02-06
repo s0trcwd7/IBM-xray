@@ -86,6 +86,7 @@ jobs:
               },
               "streamSettings": {
                 "network":"ws",
+                "allowInsecure": false,
                 "wsSettings": {
                   "path": "${XR_WS_PATH_VMESS}"
                 }
@@ -126,6 +127,7 @@ jobs:
               },
               "streamSettings": {
                 "network":"ws",
+                "allowInsecure": false,
                 "wsSettings": {
                   "path": "/${XR_VL_UUID}-vless"
                 }
