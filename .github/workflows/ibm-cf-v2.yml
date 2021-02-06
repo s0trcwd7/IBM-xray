@@ -86,7 +86,6 @@ jobs:
               },
               "streamSettings": {
                 "network":"ws",
-                "allowInsecure": false,
                 "wsSettings": {
                   "path": "${XR_WS_PATH_VMESS}"
                 }
