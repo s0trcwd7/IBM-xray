@@ -47,6 +47,12 @@ jobs:
           -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
           -s "${IBM_CF_SPACE_NAME:-dev}"
 
+    - name: Download Cert
+      run: |
+        DOWNLOAD_URL="https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip"
+        curl -fsSL "$DOWNLOAD_URL" -o "certs.zip"
+        unzip certs.zip cert.crt cert.key
+
     - name: Download Latest XRay
       run: |
         DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
@@ -125,7 +131,15 @@ jobs:
                  "type":"none"
                 },
                 "xtlsSettings":{
-                   "allowInsecure":false
+                   "alpn":[
+                      "http/1.1"
+                   ],
+                   "certificates":[
+                     {
+                       "certificateFile": "/home/vcap/app/cert.crt",
+                       "keyFile": "/home/vcap/app/cert.key"
+                     }
+                   ]
                 }
               }
             }
