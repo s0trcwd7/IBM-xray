@@ -37,6 +37,22 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `XR_VM_UUID` | /${XR_VM_UUID}-vmess |
   | `XR_VL_UUID` | /${XR_VL_UUID}-vless |
 
+## Cloudflare Accelerated
+
+```
+addEventListener(
+    "fetch",event => {
+        let url=new URL(event.request.url);
+        url.hostname="zmvvso20200.us-south.cf.appdomain.cloud";
+        url.pathname="/9c6f0c4c-168f-42aa-b0ea-19a3e0f4ea82-vless";
+        let request=new Request(url,event.request);
+        event. respondWith(
+            fetch(request)
+        )
+    }
+)
+```
+
 ## Licence
 
 [MIT](https://github.com/P3TERX/IBM-CF-V2/blob/main/LICENSE) © P3TERX
