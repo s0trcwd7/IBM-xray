@@ -16,8 +16,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `IBM_CF_ORG_NAME`(optional) | Organization name, the default is the email address. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_SPACE_NAME`(optional) | Space name, default is `dev`. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_APP_NAME` | App name, fill in according to your preference. |
-  | `XR_UUID` | Generate using UUID generator |
-  | `XR_WS_PATH_VMESS` </br> `XR_WS_PATH_VLESS` | Select one of the VMess and VLESS protocols, and fill in a combination of numbers and English letters. |
+  | `XR_VM_UUID` </br> `XR_VL_UUID` | Generate using UUID generator, also selected one of the VMess and VLESS protocols, include path|
 
 - Click the `Run workflow` button on the Actions page.
 - Wait for the deployment to complete.
@@ -31,6 +30,11 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 - [Project X](https://github.com/XTLS/Xray-core.git)
 - [IBM Cloud](https://cloud.ibm.com/)
 - [GitHub Actions](https://github.com/features/actions)
+
+## VM/VL Path
+
+| `XR_VM_UUID` | /${XR_VM_UUID}-vmess |
+| `XR_VL_UUID` | /${XR_VL_UUID}-vless |
 
 ## Licence
 
