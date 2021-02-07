@@ -40,11 +40,26 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 ## Cloudflare Accelerated
 
 ```
+VLESS Accelerated
 addEventListener(
     "fetch",event => {
         let url=new URL(event.request.url);
-        url.hostname="zmvvso20200.us-south.cf.appdomain.cloud";
-        url.pathname="/9c6f0c4c-168f-42aa-b0ea-19a3e0f4ea82-vless";
+        url.hostname="${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud";
+        url.pathname="/${XR_VL_UUID}-vless";
+        let request=new Request(url,event.request);
+        event. respondWith(
+            fetch(request)
+        )
+    }
+)
+```
+```
+VMess Accelerated
+addEventListener(
+    "fetch",event => {
+        let url=new URL(event.request.url);
+        url.hostname="${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud";
+        url.pathname="/${XR_VM_UUID}-vmess";
         let request=new Request(url,event.request);
         event. respondWith(
             fetch(request)
