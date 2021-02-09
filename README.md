@@ -32,8 +32,8 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 - [GitHub Actions](https://github.com/features/actions)
 
 ## VM/VL Path
-  | Environment Variables | Path |
-  | --------------------- | ---- |
+  | Environment Variables | Client Path |
+  | --------------------- | ----------- |
   | `XR_VM_UUID` | /${XR_VM_UUID}-vmess |
   | `XR_VL_UUID` | /${XR_VL_UUID}-vless |
 
