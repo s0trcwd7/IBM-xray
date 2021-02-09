@@ -41,8 +41,18 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 
 ```
 VLESS Accelerated
+const SingleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
+const DoubleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
 addEventListener(
     "fetch",event => {
+    
+        let nd = new Date();
+        if (nd.getDate()%2) {
+            host = SingleDay
+        } else {
+            host = DoubleDay
+        }
+        
         let url=new URL(event.request.url);
         url.hostname="${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud";
         url.pathname="/${XR_VL_UUID}-vless";
@@ -55,8 +65,18 @@ addEventListener(
 ```
 ```
 VMess Accelerated
+const SingleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
+const DoubleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
 addEventListener(
     "fetch",event => {
+    
+        let nd = new Date();
+        if (nd.getDate()%2) {
+            host = SingleDay
+        } else {
+            host = DoubleDay
+        }
+        
         let url=new URL(event.request.url);
         url.hostname="${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud";
         url.pathname="/${XR_VM_UUID}-vmess";
