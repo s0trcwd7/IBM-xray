@@ -87,7 +87,7 @@ jobs:
               "streamSettings": {
                 "network":"ws",
                 "wsSettings": {
-                  "path": "${XR_VM_UUID}-vmess"
+                  "path": "/${XR_VM_UUID}-vmess"
                 }
               }
             }
