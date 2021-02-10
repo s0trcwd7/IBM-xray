@@ -34,8 +34,8 @@ jobs:
 
     - name: Install Cloud Foundry CLI
       run: |
-        curl -fsSL "https://clis.cloud.ibm.com/download/bluemix-cli/latest/linux64/archive" | tar -zxC /tmp
-        sudo mv ./tmp/IBM_Cloud_CLI/ibmcloud /usr/local/bin/
+        curl -fsSL "https://clis.cloud.ibm.com/download/bluemix-cli/latest/linux64/archive" | tar -zx
+        sudo mv ./IBM_Cloud_CLI/ibmcloud /usr/local/bin/
         ibmcloud cf install -v
 
     - name: Login to IBM Cloud Foundry
