@@ -46,13 +46,14 @@ jobs:
 
     - name: Login to IBM Cloud Foundry
       run: |
+        ibmcloud target \
+              -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
+              -s "${IBM_CF_SPACE_NAME:-dev}" \
         ibmcloud login \
               -a "${IBM_CF_API}" \
               -r "${IBM_REGION}" \
               -u "${IBM_CF_USERNAME}" \
-              -p "${IBM_CF_PASSWORD}" \
-              -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
-              -s "${IBM_CF_SPACE_NAME:-dev}"
+              -p "${IBM_CF_PASSWORD}"
 
     - name: Download Cert
       run: |
