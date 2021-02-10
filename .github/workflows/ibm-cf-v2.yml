@@ -52,6 +52,7 @@ jobs:
               -s "${IBM_CF_SPACE_NAME:-dev}"
         ibmcloud login \
               -a "${IBM_CF_API}" \
+              -c "${IBM_CF_USERNAME}" \
               -r "${IBM_REGION}" \
               -u "${IBM_CF_USERNAME}" \
               -p "${IBM_CF_PASSWORD}"
