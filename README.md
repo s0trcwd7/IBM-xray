@@ -92,7 +92,7 @@ addEventListener(
 
 [MIT](https://github.com/P3TERX/IBM-CF-V2/blob/main/LICENSE) © P3TERX
 
-## Follow IBM CF CLI Version Site
+## Follow IBM CF CLI Version Site (Choose Latest CF CLI Version)
 
 https://packages.cloudfoundry.org/stable?release=linux64-binary&version=7.
 
