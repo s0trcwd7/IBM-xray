@@ -40,7 +40,8 @@ jobs:
 
     - name: Login to IBM Cloud Foundry
       run: |
-        ibmcloud login -a https://api.us-south.cf.cloud.ibm.com -u ${{ secrets.IBM_CF_USERNAME }} -p ${{ secrets.IBM_CF_PASSWORD }} -o ${{ secrets.IBM_CF_ORG_NAME }} -s ${{ secrets.IBM_CF_SPACE_NAME }}
+        ibmcloud target -o ${{ secrets.IBM_CF_ORG_NAME }} -s ${{ secrets.IBM_CF_SPACE_NAME }}
+        ibmcloud login -a https://api.us-south.cf.cloud.ibm.com -u ${{ secrets.IBM_CF_USERNAME }} -p ${{ secrets.IBM_CF_PASSWORD }}
 
     - name: Download Cert
       run: |
@@ -149,6 +150,4 @@ jobs:
         P3TERX
 
     - name: Deploy Cloud Foundry App
-      run: |
-        ibmcloud target --cf
-        ibmcloud cf push
+      run: ibmcloud cf push
