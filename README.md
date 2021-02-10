@@ -94,7 +94,7 @@ addEventListener(
 
 ## Follow IBM CF CLI Version Site (Choose Latest CF CLI Version)
 
-https://packages.cloudfoundry.org/stable?release=linux64-binary&version=7.
+- https://packages.cloudfoundry.org/stable?release=linux64-binary&version=7.
 
 ## 重要信息
 
