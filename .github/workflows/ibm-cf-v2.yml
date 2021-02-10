@@ -35,8 +35,6 @@ jobs:
 
     - name: IBM-CF-XR Checkout
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
 
     - name: Install Cloud Foundry CLI
       run: |
