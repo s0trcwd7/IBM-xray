@@ -64,15 +64,15 @@ jobs:
 
     - name: Download Caddy Indexpage
       run: |
-        curl -fss "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/index.html"
+        curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/index.html"
 
     - name: Download Caddy Config
       run: |
-        curl -fss "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
+        curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
 
     - name: Download Caddy
       run: |
-        curl -fss "https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=38580927894706"
+        curl -fssL "https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz" | tar -zx
 
     - name: Download Latest XRay
       run: |
