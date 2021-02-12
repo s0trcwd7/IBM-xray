@@ -72,10 +72,7 @@ jobs:
 
     - name: Download Caddy
       run: |
-        curl -fssL "https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz" | tar -zx
-        sudo mv ./caddy /usr/local/bin/
-        caddy -conf /home/vcap/app/Caddyfile
-        caddy start
+        curl -fssL "https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=38580927894706"
 
     - name: Download Latest XRay
       run: |
