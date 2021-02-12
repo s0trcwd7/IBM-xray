@@ -1,0 +1,21 @@
+:$PORT
+root * /home/vcap/app
+file_server browse
+
+header {
+    X-Robots-Tag none
+    X-Content-Type-Options nosniff
+    X-Frame-Options DENY
+    Referrer-Policy no-referrer-when-downgrade
+}
+
+basicauth /${XR_VL_UUID}/* {
+    ${XR_VL_UUID}
+}
+
+@websocket_xray_vless {
+header Connection *Upgrade*
+header Upgrade    websocket
+path /${XR_VL_UUID}-vless
+}
+reverse_proxy @websocket_xray_vless unix//home/vcap/app
