@@ -66,7 +66,6 @@ jobs:
     - name: Download Caddy
       run: |
         curl -fssL "https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz" | tar -zx
-        sudo mv ./caddy_2.3.0_linux_amd64/caddy /usr/local/bin/ | caddy run
 
     - name: Download Latest XRay
       run: |
