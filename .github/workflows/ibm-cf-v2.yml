@@ -59,18 +59,17 @@ jobs:
 
     - name: Download Cert
       run: |
-        DOWNLOAD_URL="https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip"
-        curl -fsSL "$DOWNLOAD_URL" -o "certs.zip"
+        curl -fsSL "https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip" -o "certs.zip"
         unzip certs.zip cert.crt cert.key
 
     - name: Download Caddy
       run: |
         curl -fssL "https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz" | tar -zx
+        
 
     - name: Download Latest XRay
       run: |
-        DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
-        curl -fsSL "$DOWNLOAD_URL" -o "latest-Xray.zip"
+        curl -fsSL "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -o "latest-Xray.zip"
         unzip latest-Xray.zip xray geoip.dat geosite.dat
         rm latest-Xray.zip
         chmod -v 755 x*
