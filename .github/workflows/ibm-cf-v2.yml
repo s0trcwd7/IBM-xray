@@ -62,10 +62,6 @@ jobs:
         curl -fsSL "https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip"
         unzip cert.zip cert.crt cert.key
 
-    - name: Download Caddy Indexpage
-      run: |
-        curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/index.html"
-
     - name: Download Caddy Config
       run: |
         curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
