@@ -1,6 +1,8 @@
-:8080
+localohst
 root * /home/vcap/app
 file_server browse
+
+respond "Welcome Join Templar"
 
 header {
     X-Robots-Tag none
