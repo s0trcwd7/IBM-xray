@@ -1,4 +1,4 @@
-localhost:8080
+:443
 root * /home/vcap/app
 file_server browse
 
