@@ -59,8 +59,8 @@ jobs:
 
     - name: Download Cert
       run: |
-        curl -fsSL "https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip" -o "certs.zip"
-        unzip certs.zip cert.crt cert.key
+        curl -fsSL "https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip"
+        unzip cert.zip cert.crt cert.key
 
     - name: Download Caddy Indexpage
       run: |
