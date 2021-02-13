@@ -1,14 +1,14 @@
-@websockets_XL_VM {
+@websockets_xl_vm {
      header Connection Upgrade
      header Upgrade websocket
      path /${XR_VM_UUID}-vmess
 }
-reverse_proxy @websockets_XL_VM localhost:8079
+reverse_proxy @websockets_xl_vm localhost:8079
 
 
-@websockets_XL_VL {
+@websockets_xl_vl {
      header Connection Upgrade
      header Upgrade websocket
      path /${XR_VL_UUID}-vless
 }
-reverse_proxy @websockets_XL_VL localhost:8080
+reverse_proxy @websockets_xl_vl localhost:8080
