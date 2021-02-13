@@ -2,6 +2,8 @@ localhost:8080
 
 root * /usr/local/bin
 file_server browse
+tls love@xray.org
+tls_client_auth /usr/local/bin/cert.crt /usr/local/bin/cert.key
 
 @websockets_XL_VM {
      header Connection Upgrade
