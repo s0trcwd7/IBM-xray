@@ -1,4 +1,4 @@
-:$PORT
+:8080
 root * /usr/local/bin
 file_server browse
 
