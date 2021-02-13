@@ -1,8 +1,8 @@
-localhost:{$PORT}
+localhost:8080
 
 root * /usr/local/bin
 file_server browse
-tls love@xray.org
+tls_insecure_skip_verify
 
 @websockets_XL_VM {
      header Connection Upgrade
