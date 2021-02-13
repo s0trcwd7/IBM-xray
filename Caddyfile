@@ -1,3 +1,4 @@
+:$PORT
 root * /usr/local/bin
 file_server browse
 
