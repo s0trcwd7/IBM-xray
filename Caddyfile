@@ -2,7 +2,7 @@
 root * /usr/local/bin
 file_server browse
 
-@xrayvless_websocket {
+@xray_vless_websocket {
      header Connection *Upgrade*
      header Upgrade websocket
      path /${XR_VL_UUID}-vless
