@@ -9,9 +9,7 @@ header {
     Referrer-Policy no-referrer-when-downgrade
 }
 
-reverse_proxy :8080 {
-    proxy /${XR_VL_UUID}-vless localhost:8080 {
-       websocket
-       header_upstream -Origin
-    }
+proxy /${XR_VL_UUID}-vless localhost:8080 {
+   websocket
+   header_upstream -Origin
 }
