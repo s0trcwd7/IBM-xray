@@ -6,7 +6,7 @@ file_server browse
      header Upgrade websocket
      path /${XR_VM_UUID}-vmess
 }
-reverse_proxy @websocket localhost:8080
+reverse_proxy @websocket localhost:8079
 
 @websocket {
      header Connection Upgrade
