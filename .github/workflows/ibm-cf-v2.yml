@@ -79,7 +79,7 @@ jobs:
     - name: Download Nginx
       run: |
         mkdir nginx
-        curl -fssL "https://nginx.org/download/nginx-1.18.0.tar.gz" | tar -zxC nginx
+        curl -fssL "https://nginx.org/download/nginx-1.18.0.tar.gz" | tar -zxf nginx
         
 
     - name: Download Latest XRay
