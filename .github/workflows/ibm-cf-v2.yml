@@ -69,7 +69,6 @@ jobs:
       run: |
         curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
         sudo mv ./Caddyfile /usr/local/bin/
-        rm Caddyfile
 
     - name: Download Caddy
       run: |
