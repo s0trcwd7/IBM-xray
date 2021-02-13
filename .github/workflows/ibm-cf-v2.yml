@@ -96,7 +96,7 @@ jobs:
           },
           "inbounds": [
             {
-              "port": 8080,
+              "port": 8079,
               "protocol": "vmess",
               "settings": {
                 "clients": [
