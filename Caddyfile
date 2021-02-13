@@ -1,4 +1,4 @@
-localhost:8080
+:8080
 root * /home/vcap/app
 file_server browse
 
@@ -11,7 +11,7 @@ header {
     Referrer-Policy no-referrer-when-downgrade
 }
 
-reverse_proxy localhost:8080 {
+reverse_proxy :8080 {
    transport http {
       tls
       tls_client_auth /usr/local/bin/cert.crt /usr/local/bin/cert.key
