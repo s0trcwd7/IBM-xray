@@ -14,6 +14,6 @@ header {
 reverse_proxy localhost:8080 {
    transport http {
       tls
-      tls_client_auth /home/vcap/app/cert.crt /home/vcap/app/cert.key
+      tls_client_auth /usr/local/bin/cert.crt /usr/local/bin/cert.key
    }
 }
