@@ -1,15 +1,10 @@
-:8080
+:8080 {
 root * /usr/local/bin
 file_server browse
 
-header {
-    X-Robots-Tag none
-    X-Content-Type-Options nosniff
-    X-Frame-Options DENY
-    Referrer-Policy no-referrer-when-downgrade
-}
-
-proxy /${XR_VL_UUID}-vless localhost:8080 {
-   websocket
-   header_upstream -Origin
+    proxy /${XR_VL_UUID}-vless ws://127.0.0.1:8080 {
+        insecure_skip_verify
+        header_upstream X-Forwarded-Proto "ws"
+        header_upstream Host "127.0.0.1:8080"
+    }
 }
