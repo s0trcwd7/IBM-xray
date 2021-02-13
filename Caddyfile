@@ -1,7 +1,6 @@
 :8080
 root * /usr/local/bin
 file_server browse
-tls :8080
 index index.html
 
 header {
@@ -13,6 +12,7 @@ header {
 
 reverse_proxy :8080 {
    transport http {
+      tls
       tls_client_auth /usr/local/bin/cert.crt /usr/local/bin/cert.key
    }
 }
