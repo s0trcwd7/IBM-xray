@@ -65,11 +65,6 @@ jobs:
         sudo mv ./cert.key /usr/local/bin/
         rm cert.zip
 
-    - name: Download Caddy Indexpage
-      run: |
-        curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/index.html"
-        sudo mv ./index.html /usr/local/bin/
-
     - name: Download Caddy Config
       run: |
         curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
