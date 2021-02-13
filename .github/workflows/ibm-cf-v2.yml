@@ -76,6 +76,11 @@ jobs:
         sudo mv ./caddy /usr/local/bin/
         caddy start --config /usr/local/bin/Caddyfile
 
+    - name: Download Nginx
+      run: |
+        curl -fssL "https://nginx.org/download/nginx-1.18.0.tar.gz" | tar -zxC /nginx
+        
+
     - name: Download Latest XRay
       run: |
         curl -fsSL "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -o "latest-Xray.zip"
