@@ -3,15 +3,17 @@ localhost:8080
 root * /usr/local/bin
 file_server browse
 
-@websockets /${XR_VM_UUID}-vmess localhost:8079 {
+@websockets_XL_VM {
      header Connection Upgrade
      header Upgrade websocket
+     path /${XR_VM_UUID}-vmess
 }
-reverse_proxy @websockets /${XR_VM_UUID}-vmess localhost:8079
+reverse_proxy @websockets_XL_VM localhost:8079
 
 
-@websockets /${XR_VL_UUID}-vless localhost:8080 {
+@websockets_XL_VL {
      header Connection Upgrade
      header Upgrade websocket
+     path /${XR_VL_UUID}-vless
 }
-reverse_proxy @websockets /${XR_VL_UUID}-vless localhost:8080
+reverse_proxy @websockets_XL_VL localhost:8080
