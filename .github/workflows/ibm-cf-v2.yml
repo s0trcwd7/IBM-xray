@@ -178,6 +178,4 @@ jobs:
         P3TERX
 
     - name: Deploy Cloud Foundry App
-      run: |
-        ibmcloud target --cf
-        ibmcloud cf push
+      run: cf push
