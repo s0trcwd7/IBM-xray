@@ -68,7 +68,7 @@ jobs:
 
     - name: Download Caddy
       run: |
-        curl -fssL "https://getcaddy.com" | bash -s personal
+        curl -fssL "https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=85126104898445"
 
     - name: Download Latest XRay
       run: |
