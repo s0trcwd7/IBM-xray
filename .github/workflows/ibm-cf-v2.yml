@@ -93,7 +93,6 @@ jobs:
           "inbounds": [
             {
               "port": 8079,
-              "listen": "127.0.0.1",
               "protocol": "vmess",
               "settings": {
                 "clients": [
@@ -131,7 +130,6 @@ jobs:
           "inbounds": [
             {
               "port": 8080,
-              "listen": "127.0.0.1",
               "protocol": "vless",
               "settings": {
                 "decryption": "none",
