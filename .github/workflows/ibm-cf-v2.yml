@@ -72,12 +72,6 @@ jobs:
         sudo mv ./caddy /usr/local/bin/
         caddy start --config /usr/local/bin/Caddyfile
 
-    - name: Download Nginx
-      run: |
-        mkdir nginx
-        curl -fssL "https://nginx.org/download/nginx-1.18.0.tar.gz" | tar -zxC nginx
-        
-
     - name: Download Latest XRay
       run: |
         curl -fsSL "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -o "latest-Xray.zip"
@@ -175,7 +169,8 @@ jobs:
           command: base64 -d config > config.json; ./${IBM_CF_APP_NAME} -config=config.json
           buildpacks:
           - binary_buildpack
+          - https://github.com/cloudfoundry/nginx-buildpack.git
         P3TERX
 
     - name: Deploy Cloud Foundry App
-      run: cf push -b https://github.com/cloudfoundry/nginx-buildpack.git
+      run: cf push
