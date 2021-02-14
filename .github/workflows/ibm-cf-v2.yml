@@ -42,7 +42,6 @@ jobs:
         curl -fsSL "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v7&source=github" | tar -zx
         sudo install -m 755 cf /usr/local/bin/cf
         cf version
-        rm cf
 
     - name: Login to IBM Cloud Foundry
       run: |
@@ -57,18 +56,20 @@ jobs:
       run: |
         curl -fsSL "https://github.com/Dimitri2020007/IBM-CF-XR/raw/main/cert.zip"
         unzip cert.zip cert.crt cert.key
-        sudo mv ./cert.crt /usr/local/bin/
-        sudo mv ./cert.key /usr/local/bin/
+        sudo mv ./cert.crt /usr/local/bin/cert.crt
+        sudo mv ./cert.key /usr/local/bin/cert.key
         rm cert.zip
 
     - name: Download Caddy Config
       run: |
         curl -fssL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
-        sudo mv ./Caddyfile /usr/local/bin/
+        sudo mv ./Caddyfile /usr/local/bin/Caddyfile
 
     - name: Download Caddy
       run: |
-        curl -fssL "https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=85126104898445"
+        curl -fssL "https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz" | tar -zx
+        sudo mv ./caddy /usr/local/bin/caddy
+        caddy start --config /usr/local/bin/Caddyfile
 
     - name: Download Latest XRay
       run: |
