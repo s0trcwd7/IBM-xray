@@ -10,8 +10,7 @@
 name: IBM Cloud Foundry - XRay
 
 env:
-  IBM_CF_API: https://cloud.ibm.com
-  IBM_REGION: us-south
+  IBM_CF_API: https://api.us-south.cf.cloud.ibm.com
   IBM_CF_APP_MEM: 128M
 
 on:
@@ -40,22 +39,19 @@ jobs:
 
     - name: Install Cloud Foundry CLI
       run: |
-        curl -fsSL "https://clis.cloud.ibm.com/download/bluemix-cli/latest/linux64/archive" | tar -zx
-        sudo mv ./IBM_Cloud_CLI/ibmcloud /usr/local/bin/
-        ibmcloud cf install -v 7.2.0
+        curl -fsSL "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v7&source=github" | tar -zx
+        sudo install -m 755 cf /usr/local/bin/cf
+        cf version
+        rm cf
 
     - name: Login to IBM Cloud Foundry
       run: |
-        ibmcloud api "${IBM_CF_API}" \
-        ibmcloud target \
+        cf login \
+              -a "${IBM_CF_API}" \
+              -u "${IBM_CF_USERNAME}" \
+              -p "${IBM_CF_PASSWORD}" \
               -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
               -s "${IBM_CF_SPACE_NAME:-dev}"
-        ibmcloud login \
-              -a "${IBM_CF_API}" \
-              --no-account \
-              -r "${IBM_REGION}" \
-              -u "${IBM_CF_USERNAME}" \
-              -p "${IBM_CF_PASSWORD}"
 
     - name: Download Cert
       run: |
