@@ -80,7 +80,7 @@ jobs:
 
     - name: Check Nginx Config and Start Nginx Server
       run: |
-        nginx -c /etc/nginx/nginx.conf
+        sudo nginx -c /etc/nginx/nginx.conf
 
     - name: Download Latest XRay
       run: |
