@@ -40,15 +40,6 @@ jobs:
     - name: Install Base package
       run: sudo apt install curl gnupg2 ca-certificates lsb-release
 
-    - name: Install Nginx
-      run: |
-        echo "deb http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
-        | sudo tee /etc/apt/sources.list.d/nginx.list 
-        curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add - 
-        sudo apt-key fingerprint ABF5BD827BD9BF62 
-        sudo apt update 
-        sudo apt install nginx
-
     - name: Install Cloud Foundry CLI
       run: |
         curl -fsSL "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v7&source=github" | tar -zx
