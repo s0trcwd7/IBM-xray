@@ -79,7 +79,7 @@ jobs:
         sudo chmod 755 /etc/nginx/nginx.conf
         rm nginx.conf
 
-    - name: Check Nginx Config and Start Nginx Server
+    - name: Start Nginx Server
       run: |
         nginx -c /etc/nginx/nginx.conf
 
