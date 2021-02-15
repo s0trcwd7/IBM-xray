@@ -75,7 +75,6 @@ jobs:
     - name: Download Nginx Config
       run: |
         curl -fsSL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/nginx.conf"
-        sudo mv ./nginx.conf /etc/nginx/nginx.conf
 
     - name: Check Nginx Config and Start Nginx Server
       run: |
