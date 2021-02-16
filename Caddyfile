@@ -1,4 +1,5 @@
 :443 {
+   tls
    @xray_vl_websocket {
       path /${XR_VL_UUID}-vless
       header Connection *Upgrade*
