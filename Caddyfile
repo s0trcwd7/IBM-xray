@@ -1,4 +1,4 @@
-127.0.0.1:443 {
+127.0.0.1:8080 {
    tls /usr/local/bin/cert.crt /usr/local/bin/cert.key
    
    @xray_vl_websocket {
