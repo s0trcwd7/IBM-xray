@@ -1,6 +1,4 @@
-127.0.0.1:8080 {
-   tls /usr/local/bin/cert.crt /usr/local/bin/cert.key
-   
+:8080 {
    @xray_vl_websocket {
       path /${XR_VL_UUID}-vless
       header Connection *Upgrade*
