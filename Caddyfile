@@ -4,5 +4,5 @@
       header Connection *Upgrade*
       header Upgrade websocket
    }
-   reverse_proxy @xray_vl_websocket :8080
+   reverse_proxy @xray_vl_websocket 127.0.0.1:8080
 }
