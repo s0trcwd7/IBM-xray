@@ -1,7 +1,7 @@
 127.0.0.1:443 {
    
    basicauth /${XR_VL_UUID}/* {
-       ${XR_VL_UUID} $MYUUID-HASH
+       ${XR_VL_UUID}
    }
    
    @xray_vl_websocket {
