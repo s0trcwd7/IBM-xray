@@ -162,7 +162,7 @@ jobs:
         - name: ${IBM_CF_APP_NAME}
           memory: ${IBM_CF_APP_MEM}
           random-route: true
-          command: base64 -d config >  config.json; ./${IBM_CF_APP_NAME} ./trojan-go -config config.json
+          command: ./trojan-go -config config.json
           buildpacks:
           - binary_buildpack
         P3TERX
