@@ -1,4 +1,4 @@
-:8080 {
+127.0.0.1:443 {
 
    @xray_vl_websocket {
       path /${XR_VL_UUID}-vless
