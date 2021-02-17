@@ -97,7 +97,7 @@ jobs:
           "inbounds": [
             {
               "listen": "0.0.0.0",
-              "port": 8079,
+              "port": 8080,
               "protocol": "vmess",
               "settings": {
                 "clients": [
@@ -127,31 +127,37 @@ jobs:
       if: ${{ env.XR_VL_UUID }}
       run: |
         base64 << P3TERX > config
-        {
-           "run_type": "server",
-           "local_addr": "0.0.0.0",
-           "local_port": 8080,
-           "remote_addr": "127.0.0.1",
-           "remote_port": 443,
-           "password": [
-              "${XR_VL_UUID}"
-           ],
-           "ssl": {
-               "cert": "/usr/local/bin/cert.crt"
-               "key": "/usr/local/bin/cert.key"
-           },
-           "router": {
-               "enabled": true,
-               "block": [
-                   "geoip:private"
-               ],
-               "geoip": /usr/local/bin/geoip.dat
-               "geosite": /usr/local/bin/geosite.dat
-           },
-           "websocket": {
-             "enabled": true,
-             "path": "/${XR_VL_UUID}-trojan"
-           }
+                {
+          "log": {
+            "access": "none",
+            "loglevel": "error"
+          },
+          "inbounds": [
+            {
+              "listen": "0.0.0.0",
+              "port": 8080,
+              "protocol": "trojan",
+              "settings": {
+                "clients": [
+                  {
+                    "password": "${XR_VL_UUID}"
+                  }
+                ]
+              },
+              "streamSettings": {
+                "network":"ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "/${XR_VL_UUID}-vless"
+                }
+              }
+            }
+          ],
+          "outbounds": [
+            {
+              "protocol": "freedom"
+            }
+          ]
         }
         P3TERX
 
