@@ -146,7 +146,7 @@ jobs:
                 "network":"ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                  "path": "/${XR_VL_UUID}-vless"
+                  "path": "/${XR_VL_UUID}-trojan"
                 }
               }
             }
