@@ -62,14 +62,6 @@ addEventListener(
         )
     }
 )
-
-===========================================
-/${XR_VM_UUID}-vmess
-/${XR_VL_UUID}-vless
-/${XR_TR_UUID}-trojan
-
-Choose one of the three in url.pathname="";
-===========================================
 ```
 
 ## Licence
