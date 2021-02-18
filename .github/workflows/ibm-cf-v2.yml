@@ -38,6 +38,9 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Install Base package
+      run: sudo apt install curl gnupg2 ca-certificates lsb-release libnss3-tools
+
     - name: Install Cloud Foundry CLI
       run: |
         curl -fsSL "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v7&source=github" | tar -zx
@@ -52,6 +55,17 @@ jobs:
               -p "${IBM_CF_PASSWORD}" \
               -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
               -s "${IBM_CF_SPACE_NAME:-dev}"
+
+    - name: Download Caddy config
+      run: |
+        curl -fsSL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
+        sudo mv ./Caddyfile /usr/local/bin/Caddyfile
+
+    - name: Download Caddy
+      run: |
+        curl -fssL "https://github.com/caddyserver/caddy/releases/download/v2.3.0/caddy_2.3.0_linux_amd64.tar.gz" | tar -zx
+        sudo mv ./caddy /usr/local/bin/caddy
+        caddy start --config /usr/local/bin/Caddyfile
 
     - name: Download Latest XRay
       run: |
