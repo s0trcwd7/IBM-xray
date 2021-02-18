@@ -1,4 +1,11 @@
-:8080 {
+127.0.0.1:443 {
+   
+   @xray_vl_websocket {
+      path /${XR_TR_UUID}-trojan
+      header Connection *Upgrade*
+      header Upgrade websocket
+   }
+   reverse_proxy @xray_vl_websocket 127.0.0.1:8080
 
    @xray_vl_websocket {
       path /${XR_VL_UUID}-vless
@@ -6,4 +13,6 @@
       header Upgrade websocket
    }
    reverse_proxy @xray_vl_websocket 127.0.0.1:8080
+   
+   
 }
