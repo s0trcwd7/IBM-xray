@@ -38,14 +38,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install Base package
-      run: |
-        sudo apt-get install -y debian-keyring debian-archive-keyring apt-transport-https
-        curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo apt-key add -
-        curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee -a /etc/apt/sources.list.d/caddy-stable.list
-        sudo apt update
-        sudo apt-get install -y curl gnupg2 ca-certificates lsb-release libnss3-tools caddy
-
     - name: Install Cloud Foundry CLI
       run: |
         curl -fsSL "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v7&source=github" | tar -zx
@@ -69,12 +61,6 @@ jobs:
         chmod -v 755 x*
         ./xray -version
         mv xray ${IBM_CF_APP_NAME}
-
-    - name: Start Caddy
-      run: |
-        curl -fsSL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
-        sudo mv ./Caddyfile /etc/Caddyfile
-        sudo caddy start
 
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_VM_UUID }}
