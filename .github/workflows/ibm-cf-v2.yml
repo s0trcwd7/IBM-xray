@@ -40,8 +40,8 @@ jobs:
 
     - name: Install Base package
       run: |
-        sudo apt-get install curl gnupg2 ca-certificates lsb-release libnss3-tools
-        sudo apt-get remove nginx
+        sudo apt-get install -y curl gnupg2 ca-certificates lsb-release libnss3-tools
+        sudo apt-get remove -y nginx*
 
     - name: Install Cloud Foundry CLI
       run: |
@@ -170,7 +170,7 @@ jobs:
       if: ${{ env.XR_TR_UUID }}
       run: |
         base64 << P3TERX > config
-                {
+        {
           "log": {
             "access": "none",
             "loglevel": "error"
@@ -181,9 +181,10 @@ jobs:
               "port": 8081,
               "protocol": "trojan",
               "settings": {
+                "decryption": "none",
                 "clients": [
                   {
-                    "password": "${XR_TR_UUID}"
+                    "id": "${XR_TR_UUID}"
                   }
                 ]
               },
@@ -191,7 +192,7 @@ jobs:
                 "network":"ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                  "path": "/${XR_TR_UUID}-trojan"
+                  "path": "/${XR_VL_UUID}-trojan"
                 }
               }
             }
