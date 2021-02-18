@@ -18,7 +18,6 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `IBM_CF_APP_NAME` | App name, fill in according to your preference. |
   | `XR_VM_UUID` </br> `XR_VL_UUID` </br> `XR_TR_UUID` | Generate using UUID generator, also selected VMess and VLESS and Trojan protocols, include path|
 
-- Already Include Multi Protocol, please note that the port number should not be repeated to avoid conflicts.
 - Click the `Run workflow` button on the Actions page.
 - Wait for the deployment to complete.
 - Click the relevant application on the [Cloud Foundry Public](https://cloud.ibm.com/cloudfoundry/public) page to view the access address.
@@ -56,12 +55,21 @@ addEventListener(
         
         let url=new URL(event.request.url);
         url.hostname="${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud";
+        url.pathname="";
         let request=new Request(url,event.request);
         event. respondWith(
             fetch(request)
         )
     }
 )
+
+===========================================
+/${XR_VM_UUID}-vmess
+/${XR_VL_UUID}-vless
+/${XR_TR_UUID}-trojan
+
+Choose one of the three in url.pathname="";
+===========================================
 ```
 
 ## Licence
