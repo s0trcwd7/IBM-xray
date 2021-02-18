@@ -16,7 +16,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `IBM_CF_ORG_NAME`(optional) | Organization name, the default is the email address. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_SPACE_NAME`(optional) | Space name, default is `dev`. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_APP_NAME` | App name, fill in according to your preference. |
-  | `XR_VM_UUID` </br> `XR_VL_UUID` </br> 'XR_TR_UUID' | Generate using UUID generator, also selected VMess and VLESS and Trojan protocols, include path|
+  | `XR_VM_UUID` </br> `XR_VL_UUID` </br> `XR_TR_UUID` | Generate using UUID generator, also selected VMess and VLESS and Trojan protocols, include path|
 
 - Already Include Multi Protocol, please note that the port number should not be repeated to avoid conflicts.
 - Click the `Run workflow` button on the Actions page.
