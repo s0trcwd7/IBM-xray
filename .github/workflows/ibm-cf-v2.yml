@@ -29,6 +29,7 @@ jobs:
       IBM_CF_APP_NAME: ${{ secrets.IBM_CF_APP_NAME }}
       XR_VM_UUID: ${{ secrets.XR_VM_UUID }}
       XR_VL_UUID: ${{ secrets.XR_VL_UUID }}
+      XR_TR_UUID: ${{ secrets.XR_TR_UUID }}
 
     steps:
 
