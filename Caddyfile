@@ -1,4 +1,4 @@
-:8080 {
+127.0.0.1:443 {
    
    @xray_xr_websocket {
       path /${XR_TR_UUID}-trojan
