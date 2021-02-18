@@ -38,7 +38,9 @@ jobs:
         fetch-depth: 0
 
     - name: Install Base package
-      run: sudo apt install curl gnupg2 ca-certificates lsb-release libnss3-tools
+      run: |
+        sudo apt-get install curl gnupg2 ca-certificates lsb-release libnss3-tools
+        sudo apt-get remove nginx
 
     - name: Install Cloud Foundry CLI
       run: |
@@ -125,7 +127,7 @@ jobs:
       if: ${{ env.XR_VL_UUID }}
       run: |
         base64 << P3TERX > config
-                {
+        {
           "log": {
             "access": "none",
             "loglevel": "error"
@@ -134,11 +136,15 @@ jobs:
             {
               "listen": "0.0.0.0",
               "port": 8080,
-              "protocol": "trojan",
+              "protocol": "vless",
               "settings": {
+                "decryption": "none",
                 "clients": [
                   {
-                    "password": "${XR_VL_UUID}"
+                    "id": "${XR_VL_UUID}",
+                    "flow": "xtls-rprx-direct",
+                    "level": 0,
+                    "email": "love@xray.org"
                   }
                 ]
               },
@@ -146,7 +152,45 @@ jobs:
                 "network":"ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                  "path": "/${XR_VL_UUID}-trojan"
+                  "path": "/${XR_VL_UUID}-vless"
+                }
+              }
+            }
+          ],
+          "outbounds": [
+            {
+              "protocol": "freedom"
+            }
+          ]
+        }
+        P3TERX
+
+    - name: Generate XRay Config File (Trojan)
+      if: ${{ env.XR_TR_UUID }}
+      run: |
+        base64 << P3TERX > config
+                {
+          "log": {
+            "access": "none",
+            "loglevel": "error"
+          },
+          "inbounds": [
+            {
+              "listen": "0.0.0.0",
+              "port": 8081,
+              "protocol": "trojan",
+              "settings": {
+                "clients": [
+                  {
+                    "password": "${XR_TR_UUID}"
+                  }
+                ]
+              },
+              "streamSettings": {
+                "network":"ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "/${XR_TR_UUID}-trojan"
                 }
               }
             }
