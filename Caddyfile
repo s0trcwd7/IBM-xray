@@ -1,8 +1,0 @@
-:8080 {
-    @xray_xr_websocket {
-          path /${XR_TR_UUID}-trojan
-          header Connection *Upgrade*
-          header Upgrade websocket
-    }
-    reverse_proxy @xray_xr_websocket 127.0.0.1:1080
-}
