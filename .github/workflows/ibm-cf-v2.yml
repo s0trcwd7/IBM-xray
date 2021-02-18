@@ -41,7 +41,6 @@ jobs:
     - name: Install Base package
       run: |
         sudo apt-get install -y curl gnupg2 ca-certificates lsb-release libnss3-tools
-        sudo apt-get remove -y nginx*
 
     - name: Install Cloud Foundry CLI
       run: |
