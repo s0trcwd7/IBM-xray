@@ -16,8 +16,9 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `IBM_CF_ORG_NAME`(optional) | Organization name, the default is the email address. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_SPACE_NAME`(optional) | Space name, default is `dev`. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_APP_NAME` | App name, fill in according to your preference. |
-  | `XR_VM_UUID` </br> `XR_VL_UUID` | Generate using UUID generator, also selected one of the VMess and VLESS protocols, include path|
+  | `XR_VM_UUID` </br> `XR_VL_UUID` </br> 'XR_TR_UUID' | Generate using UUID generator, also selected VMess and VLESS and Trojan protocols, include path|
 
+- Already Include Multi Protocol, please note that the port number should not be repeated to avoid conflicts.
 - Click the `Run workflow` button on the Actions page.
 - Wait for the deployment to complete.
 - Click the relevant application on the [Cloud Foundry Public](https://cloud.ibm.com/cloudfoundry/public) page to view the access address.
@@ -31,16 +32,16 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 - [IBM Cloud](https://cloud.ibm.com/)
 - [GitHub Actions](https://github.com/features/actions)
 
-## VM/VL Path
+## VM/VL/TR Path
   | Environment Variables | Client Path |
   | --------------------- | ----------- |
   | `XR_VM_UUID` | /${XR_VM_UUID}-vmess |
   | `XR_VL_UUID` | /${XR_VL_UUID}-vless |
+  | `XR_TR_UUID` | /${XR_TR_UUID}-trojan |
 
-## Cloudflare Accelerated
+## Cloudflare Reverse Proxy Code
 
 ```
-VLESS Accelerated
 const SingleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
 const DoubleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
 addEventListener(
@@ -55,31 +56,6 @@ addEventListener(
         
         let url=new URL(event.request.url);
         url.hostname="${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud";
-        url.pathname="/${XR_VL_UUID}-vless";
-        let request=new Request(url,event.request);
-        event. respondWith(
-            fetch(request)
-        )
-    }
-)
-```
-```
-VMess Accelerated
-const SingleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
-const DoubleDay = '${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud'
-addEventListener(
-    "fetch",event => {
-    
-        let nd = new Date();
-        if (nd.getDate()%2) {
-            host = SingleDay
-        } else {
-            host = DoubleDay
-        }
-        
-        let url=new URL(event.request.url);
-        url.hostname="${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud";
-        url.pathname="/${XR_VM_UUID}-vmess";
         let request=new Request(url,event.request);
         event. respondWith(
             fetch(request)
