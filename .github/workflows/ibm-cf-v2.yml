@@ -70,6 +70,12 @@ jobs:
         ./xray -version
         mv xray ${IBM_CF_APP_NAME}
 
+    - name: Start Caddy
+      run: |
+        curl -fsSL "https://raw.githubusercontent.com/Dimitri2020007/IBM-CF-XR/main/Caddyfile"
+        sudo mv ./Caddyfile /etc/Caddyfile
+        sudo caddy start --config /etc/Caddyfile
+
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_VM_UUID }}
       run: |
