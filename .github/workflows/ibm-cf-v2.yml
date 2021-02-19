@@ -29,6 +29,7 @@ jobs:
       IBM_CF_APP_NAME: ${{ secrets.IBM_CF_APP_NAME }}
       XR_VM_UUID: ${{ secrets.XR_VM_UUID }}
       XR_VL_UUID: ${{ secrets.XR_VL_UUID }}
+      XR_TR_UUID: ${{ secrets.XR_TR_UUID }}
 
     steps:
 
@@ -163,6 +164,66 @@ jobs:
                 "allowInsecure": false,
                 "wsSettings": {
                   "path": "/${XR_VL_UUID}-vless"
+                }
+              }
+            }
+          ],
+          "outbounds": [
+            {
+              "protocol": "freedom",
+              "tag": "direct"
+            },
+            {
+              "protocol": "blackhole",
+              "tag": "block"
+            }
+          ]
+        }
+        P3TERX
+
+
+    - name: Generate XRay Config File (Trojan)
+      if: ${{ env.XR_TR_UUID }}
+      run: |
+        base64 << P3TERX > config
+        {
+          "log": {
+            "access": "none",
+            "loglevel": "error"
+          },
+          "routing": {
+              "domainStrategy": "AsIs",
+              "rules": [
+                  {
+                      "type": "field",
+                      "ip": [
+                          "geoip:private"
+                      ],
+                      "outboundTag": "block"
+                  }
+              ]
+          },
+          "inbounds": [
+            {
+              "listen": "0.0.0.0",
+              "port": 8080,
+              "protocol": "trojan",
+              "settings": {
+                "decryption": "none",
+                "clients": [
+                  {
+                    "id": "${XR_TR_UUID}",
+                    "flow": "xtls-rprx-direct",
+                    "level": 0,
+                    "email": "love@xray.org"
+                  }
+                ]
+              },
+              "streamSettings": {
+                "network":"ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "/${XR_TR_UUID}-trojan"
                 }
               }
             }
