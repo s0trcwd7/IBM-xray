@@ -29,7 +29,6 @@ jobs:
       IBM_CF_APP_NAME: ${{ secrets.IBM_CF_APP_NAME }}
       XR_VM_UUID: ${{ secrets.XR_VM_UUID }}
       XR_VL_UUID: ${{ secrets.XR_VL_UUID }}
-      XR_TR_UUID: ${{ secrets.XR_TR_UUID }}
 
     steps:
 
@@ -39,7 +38,9 @@ jobs:
         fetch-depth: 0
 
     - name: Install Base package
-      run: sudo apt install -y curl gnupg2 ca-certificates lsb-release libnss3-tools
+      run: |
+        sudo apt-get install -y curl gnupg2 ca-certificates lsb-release libnss3-tools nginx
+        sudo apt-get dist-upgrade -y
 
     - name: Install Cloud Foundry CLI
       run: |
@@ -74,6 +75,18 @@ jobs:
             "access": "none",
             "loglevel": "error"
           },
+          "routing": {
+              "domainStrategy": "AsIs",
+              "rules": [
+                  {
+                      "type": "field",
+                      "ip": [
+                          "geoip:private"
+                      ],
+                      "outboundTag": "block"
+                  }
+              ]
+          },
           "inbounds": [
             {
               "listen": "0.0.0.0",
@@ -97,7 +110,12 @@ jobs:
           ],
           "outbounds": [
             {
-              "protocol": "freedom"
+              "protocol": "freedom",
+              "tag": "direct"
+            },
+            {
+              "protocol": "blackhole",
+              "tag": "block"
             }
           ]
         }
@@ -111,6 +129,18 @@ jobs:
           "log": {
             "access": "none",
             "loglevel": "error"
+          },
+          "routing": {
+              "domainStrategy": "AsIs",
+              "rules": [
+                  {
+                      "type": "field",
+                      "ip": [
+                          "geoip:private"
+                      ],
+                      "outboundTag": "block"
+                  }
+              ]
           },
           "inbounds": [
             {
@@ -139,46 +169,12 @@ jobs:
           ],
           "outbounds": [
             {
-              "protocol": "freedom"
-            }
-          ]
-        }
-        P3TERX
-
-    - name: Generate XRay Config File (Trojan)
-      if: ${{ env.XR_TR_UUID }}
-      run: |
-        base64 << P3TERX > config
-        {
-          "log": {
-            "access": "none",
-            "loglevel": "error"
-          },
-          "inbounds": [
+              "protocol": "freedom",
+              "tag": "direct"
+            },
             {
-              "listen": "0.0.0.0",
-              "port": 8080,
-              "protocol": "trojan",
-              "settings": {
-                "decryption": "none",
-                "clients": [
-                  {
-                    "id": "${XR_TR_UUID}"
-                  }
-                ]
-              },
-              "streamSettings": {
-                "network":"ws",
-                "allowInsecure": false,
-                "wsSettings": {
-                  "path": "/${XR_TR_UUID}-trojan"
-                }
-              }
-            }
-          ],
-          "outbounds": [
-            {
-              "protocol": "freedom"
+              "protocol": "blackhole",
+              "tag": "block"
             }
           ]
         }
