@@ -16,7 +16,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `IBM_CF_ORG_NAME`(optional) | Organization name, the default is the email address. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_SPACE_NAME`(optional) | Space name, default is `dev`. Can be found on [this page](https://cloud.ibm.com/account/cloud-foundry). |
   | `IBM_CF_APP_NAME` | App name, fill in according to your preference. |
-  | `XR_VM_UUID` </br> `XR_VL_UUID` </br> `XR_TR_UUID` | Generate using UUID generator, also selected VMess and VLESS and Trojan, include path, Choose 1 from 3 options. |
+  | `XR_VM_UUID` </br> `XR_VL_UUID` | Generate using UUID generator, also selected VMess and VLESS and Trojan, include path, Choose 1 from 3 options. |
 
 - Click the `Run workflow` button on the Actions page.
 - Wait for the deployment to complete.
@@ -39,7 +39,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `Address` | ${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud </br> Cloudflare Reverse Proxy IP |
   | `Port` | 443 |
   | `VM/VL User ID` | XR_VM_UUID </br> XR_VL_UUID |
-  | `Flow` | xtls-rprx-direct (Trojan not need this option) |
+  | `Flow` | xtls-rprx-direct |
   | `Network` | ws </br> websocket |
   | `Host` | ${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud </br> Cloudflare Reverse Proxy Domain Name |
   | `Type` | none |
@@ -48,7 +48,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `AllowInsecure` | false |
   | `SNI` | Same as Host |
 
-## Client Ws+Tls+Xtls-rprx-direct(Flow) Support Status (Trojan not support flow option)
+## Client Ws+Tls+Xtls-rprx-direct(Flow) Support Status
 
 | Client | Status |
 | ------ | ------ |
