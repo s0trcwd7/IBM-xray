@@ -55,7 +55,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 | `2dust V2RayN` </br> `2dust V2RayNG` | Yes |
 | `OpenWrt SSRPlus` | No |
 | `OpenWrt Passwall` | No |
-| `QV2Ray` | n/a |
+| `QV2Ray` | No |
 
 ## Cloudflare Reverse Proxy Code
 
