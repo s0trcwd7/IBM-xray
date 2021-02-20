@@ -48,7 +48,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `AllowInsecure` | false |
   | `SNI` | Same as Host |
 
-## Client Ws+Tls+Xtls-rprx-direct(Flow) Support Status
+## Client Ws+Tls+Xtls-rprx-direct(Flow) Support Status (Trojan not support flow option)
 
 | Client | Status |
 | ------ | ------ |
