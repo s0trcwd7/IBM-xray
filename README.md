@@ -39,6 +39,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `VM/VL User ID` | XR_VM_UUID </br> XR_VL_UUID |
   | `Network` | ws </br> websocket |
   | `Host` | ${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud </br> Cloudflare Reverse Proxy Domain Name |
+  | `Type` | none |
   | `Path` | /${XR_VM_UUID}-vmess </br> /${XR_VL_UUID}-vless |
   | `Tls` | Tls must open, otherwise you will be disconnected |
   | `AllowInsecure` | false |
