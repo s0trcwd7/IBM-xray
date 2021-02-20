@@ -33,11 +33,13 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 - [Better Cloudflare IP](https://github.com/XIU2/CloudflareSpeedTest.git)
 
 ## VM/VL Client Setup
-  | Client Variables | Values |
+
+| Client Variables | Values |
   | ---------------- | ------ |
   | `Address` | ${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud </br> Cloudflare Reverse Proxy IP |
   | `Port` | 443 |
   | `VM/VL User ID` | XR_VM_UUID </br> XR_VL_UUID |
+  | `Flow` | xtls-rprx-direct |
   | `Network` | ws </br> websocket |
   | `Host` | ${IBM_CF_APP_NAME}.us-south.cf.appdomain.cloud </br> Cloudflare Reverse Proxy Domain Name |
   | `Type` | none |
@@ -45,6 +47,15 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
   | `Tls` | Tls must open, otherwise you will be disconnected |
   | `AllowInsecure` | false |
   | `SNI` | Same as Host |
+
+## Client Ws+Tls+Xtls-rprx-direct(Flow) Support Status
+
+| Client | Status |
+| ------ | ------ |
+| `2dust V2RayN </br> V2RayNG` | Yes |
+| `OpenWrt SSRPlus` | No |
+| `OpenWrt Passwall` | No |
+| `QV2Ray` | n/a |
 
 ## Cloudflare Reverse Proxy Code
 
