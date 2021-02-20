@@ -52,7 +52,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 
 | Client | Status |
 | ------ | ------ |
-| `2dust` `V2RayN` </br> `V2RayNG` | Yes |
+| `2dust V2RayN` </br> `2dust V2RayNG` | Yes |
 | `OpenWrt SSRPlus` | No |
 | `OpenWrt Passwall` | No |
 | `QV2Ray` | n/a |
