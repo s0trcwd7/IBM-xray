@@ -30,6 +30,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 - [Project X](https://github.com/XTLS/Xray-core.git)
 - [IBM Cloud](https://cloud.ibm.com/)
 - [GitHub Actions](https://github.com/features/actions)
+- [Better Cloudflare IP](https://github.com/XIU2/CloudflareSpeedTest.git)
 
 ## VM/VL Client Setup
   | Client Variables | Values |
