@@ -32,7 +32,7 @@ Use GitHub Actions to automatically deploy the latest version of XRay to IBM Clo
 - [GitHub Actions](https://github.com/features/actions)
 - [Better Cloudflare IP](https://github.com/XIU2/CloudflareSpeedTest.git)
 
-## VM/VL/TR Client Setup
+## VM/VL Client Setup
 
 | Client Variables | Values |
   | ---------------- | ------ |
