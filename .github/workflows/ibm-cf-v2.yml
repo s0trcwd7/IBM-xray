@@ -69,7 +69,7 @@ jobs:
     - name: Download Latest Trojan-GO
       run: |
         curl -fsSL "https://github.com/p4gefau1t/trojan-go/releases/download/v0.8.2/trojan-go-linux-amd64.zip" -o "latest-trojan.zip"
-        unzip latest-trojan.zip trojan-go geoip.dat geosite.dat
+        unzip latest-trojan.zip trojan-go
         rm latest-trojan.zip
         chmod -v 755 t*
         ./trojan-go -version
