@@ -29,7 +29,6 @@ jobs:
       IBM_CF_APP_NAME: ${{ secrets.IBM_CF_APP_NAME }}
       XR_VM_UUID: ${{ secrets.XR_VM_UUID }}
       XR_VL_UUID: ${{ secrets.XR_VL_UUID }}
-      XR_TR_UUID: ${{ secrets.XR_TR_UUID }}
 
     steps:
 
@@ -65,15 +64,6 @@ jobs:
         chmod -v 755 x*
         ./xray -version
         mv xray ${IBM_CF_APP_NAME}
-
-    - name: Download Latest Trojan-GO
-      run: |
-        curl -fsSL "https://github.com/p4gefau1t/trojan-go/releases/download/v0.8.2/trojan-go-linux-amd64.zip" -o "latest-trojan.zip"
-        unzip latest-trojan.zip trojan-go
-        rm latest-trojan.zip
-        chmod -v 755 t*
-        ./trojan-go -version
-        mv trojan-go ${IBM_CF_APP_NAME}
 
     - name: Generate XRay Config File (VMess)
       if: ${{ env.XR_VM_UUID }}
@@ -143,45 +133,6 @@ jobs:
                 "allowInsecure": false,
                 "wsSettings": {
                   "path": "/${XR_VL_UUID}-vless"
-                }
-              }
-            }
-          ],
-          "outbounds": [
-            {
-              "protocol": "freedom"
-            }
-          ]
-        }
-        P3TERX
-
-    - name: Generate Trojan-go Config File (Trojan-Ws)
-      if: ${{ env.XR_TR_UUID }}
-      run: |
-        base64 << P3TERX > config
-        {
-          "log": {
-            "access": "none",
-            "loglevel": "error"
-          },
-          "inbounds": [
-            {
-              "listen": "0.0.0.0",
-              "port": 9090,
-              "protocol": "trojan",
-              "settings": {
-                "decryption": "none",
-                "clients": [
-                  {
-                    "password": "${XR_TR_UUID}"
-                  }
-                ]
-              },
-              "streamSettings": {
-                "network":"ws",
-                "allowInsecure": false,
-                "wsSettings": {
-                  "path": "/${XR_TR_UUID}-trojan"
                 }
               }
             }
