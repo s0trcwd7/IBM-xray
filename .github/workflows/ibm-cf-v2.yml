@@ -76,7 +76,7 @@ jobs:
           },
           "inbounds": [
             {
-              "listen": "0.0.0.0",
+              "listen": "/home/vcap/app/${IBM_CF_APP_NAME}",
               "port": 8080,
               "protocol": "vmess",
               "settings": {
@@ -114,7 +114,7 @@ jobs:
           },
           "inbounds": [
             {
-              "listen": "0.0.0.0",
+              "listen": "/home/vcap/app/${IBM_CF_APP_NAME}",
               "port": 8080,
               "protocol": "vless",
               "settings": {
