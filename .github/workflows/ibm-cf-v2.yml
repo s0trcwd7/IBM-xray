@@ -162,8 +162,7 @@ jobs:
                 "decryption": "none",
                 "clients": [
                   {
-                    "id": "${XR_TR_UUID}",
-                    "level": 0,
+                    "password": "${XR_TR_UUID}",
                     "email": "love@xray.org"
                   }
                 ]
