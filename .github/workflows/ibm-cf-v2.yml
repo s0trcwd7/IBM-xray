@@ -89,7 +89,7 @@ jobs:
               "streamSettings": {
                 "network":"ws",
                 "wsSettings": {
-                  "path": "/${XR_VM_UUID}-vmess"
+                  "path": "/${XR_VM_UUID}-vmess?ed=2048"
                 }
               }
             }
@@ -130,7 +130,7 @@ jobs:
                 "network":"ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                  "path": "/${XR_VL_UUID}-vless"
+                  "path": "/${XR_VL_UUID}-vless?ed=2048"
                 }
               }
             }
