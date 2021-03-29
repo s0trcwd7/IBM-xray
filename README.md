@@ -103,6 +103,8 @@ fork或clone本项目请低调使用，执意在任何网站上宣传并且不�
 
 禁止滥用，因滥用产生的一切后果本人概不负责！！！
 
+本项目自2021.3.29之后不再更新，因用的人太多，项目被封。不再维护该项目。
+
 ## Important information
 
 Fork or clone this project, please use it in a low-key manner. If you insist on advertising on any website and do not agree with the low-key use, please close this page and leave immediately! ! !
@@ -119,6 +121,8 @@ As long as the node built with ibm xray is still used, the node will not be auto
 
 Abuse is prohibited, I am not responsible for any consequences arising from abuse! ! !
 
+This project will no longer be updated after 2021.3.29. Because there are too many people using it, the project has been blocked. The project is no longer maintained.
+
 ## 重要な情報
 
 このプロジェクトをフォークまたはクローンする場合は、控えめに使用してください。Webサイトでの広告を主張し、控えめな使用に同意しない場合は、このページを閉じてすぐに終了してください。 ！ ！ ！
@@ -134,3 +138,5 @@ Abuse is prohibited, I am not responsible for any consequences arising from abus
 ibm xrayで構築されたノードが引き続き使用されている限り、ノードは10日を超えて自動的に閉じられません。
 
 虐待は禁止されています、私は虐待から生じるいかなる結果に対しても責任を負いません！ ！ ！
+
+このプロジェクトは2021.3.29以降更新されなくなります。使用する人が多すぎるため、プロジェクトはブロックされました。 プロジェクトはもはや維持されていません。
