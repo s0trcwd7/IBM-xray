@@ -58,7 +58,7 @@ jobs:
 
     - name: Download Latest XRay
       run: |
-        curl -fsSL "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -o "latest-Xray.zip"
+        curl -fsSL "https://github.com/XTLS/Xray-core/releases/download/v1.0.0/Xray-linux-64.zip" -o "latest-Xray.zip"
         unzip latest-Xray.zip xray geoip.dat geosite.dat
         rm latest-Xray.zip
         chmod -v 755 x*
